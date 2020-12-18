@@ -1104,6 +1104,13 @@ div#navbarResponsive {
     margin: 30px auto;
     display: block;
 }
+.page-template-blog .polyg
+
+{
+    width: 100%;
+    margin: 30px auto;
+    display: block;
+}
 .polyg2 
 {
     width: 80%;
@@ -1459,8 +1466,8 @@ div#navbarResponsive {
     max-width: 100%;
     max-height: 100%;
 }
-.heading {
-    padding: 0px 30px 0px 30px;
+.heading     padding: 0px 30px 0px 30px;{
+
     z-index: 111111;
     position: relative;
 }
@@ -1696,15 +1703,18 @@ div#navbarResponsive {
   z-index: 111111;
   position: relative;
 }
-.menu-main-menu-container {
+.menu-main-menu-container 
+{
     z-index: 1111;
 }
-a:hover {
+a:hover 
+{
  
     text-decoration: none !important;
 }
 
-.bgbottom {
+.bgbottom 
+{
     
     padding-bottom: 100px;
 }

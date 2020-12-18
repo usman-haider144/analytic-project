@@ -1,18 +1,13 @@
 <?php
 /**
  * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since Twenty Seventeen 1.0
- * @version 1.0
  */
 
 get_header(); ?>
 
 <div class="wrap">
+		 	 	<?php ah_breadcrumb(); ?>
+ 	 <span class="bread"><h1>Search</h1></span>
 
 	<header class="page-header">
 		<?php if ( have_posts() ) : ?>
@@ -41,17 +36,17 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/post/content', 'excerpt' );
+
 
 			endwhile; // End the loop.
 
-			the_posts_pagination(
-				array(
-					'prev_text'          => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'Analytic' ) . '</span>',
-					'next_text'          => '<span class="screen-reader-text">' . __( 'Next page', 'Analytic' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'Analytic' ) . ' </span>',
-				)
-			);
+			// the_posts_pagination(
+			// 	array(
+			// 		'prev_text'          => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'Analytic' ) . '</span>',
+			// 		'next_text'          => '<span class="screen-reader-text">' . __( 'Next page', 'Analytic' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
+			// 		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'Analytic' ) . ' </span>',
+			// 	)
+			// );
 
 		else :
 			?>

@@ -5,3 +5,201 @@ Version: 1.00
 Author: M Usman
 Author URl: http://facebook.com/usm144
 */
+.owl-carousel {
+    display: block !important;
+    width: 100%;
+    z-index: 1;
+}
+.owl-nav  {
+    text-align: center;
+
+}
+.owl-nav button span {
+    
+    font-size: 50px;
+    margin: auto;
+    padding: 10px;
+}
+.bg-post h3 
+{
+    padding: 21px 0px 10px 0px;
+    font-size: 25px;
+    text-align: center;    
+}
+.bg-post h3 a 
+{  
+    color: #172755;
+}
+
+.bg-post p 
+{  
+	font-size: 18px;
+	font-weight: 400;
+    color: #8794BA;
+}
+.bg-post h5 a 
+{  
+	font-size: 20px;
+	font-weight: 400;
+    
+}
+.byline a
+{
+	color: #172755;
+}
+.byline 
+{
+	font-size: 15px !important;
+}
+.singlepge p
+{
+	padding: 5px 0px;
+	width: 889px;
+	max-width: 100%;
+	margin: auto;
+	color: #8794BA;
+}
+.singlepge h1
+{
+	color: #172755;
+}
+section.widget ul li 
+{
+    list-style: none;
+    color: #ccc !important;
+    padding: 4px 0px 0px 0px;
+}
+span.screen-reader-text 
+{
+    display: none;
+}
+input.search-field {
+    width: 220px;
+    height: 40px;
+    border: 1px solid transparent;
+}
+input.search-submit {
+    height: 39px;
+    width: 64px;
+    max-width: 100%;
+    border: 1px solid transparent;
+    background-color: #EF2A82;
+    color: #fff;
+    margin-left: -4px;
+    font-family: 'Roboto';
+}
+.widget ul {
+    padding-left: 7px;
+}
+.widget 
+{
+    margin:20px 0px;
+}
+.widget h2 
+{
+    color: #172755;
+}
+.bg-bord
+{
+	border-right: 1px solid #D3D9E9;
+}
+.blog-post
+{
+	background: #fff;
+    box-shadow: 0px 7px 47px -34px #192A59;
+    border-radius: 25px 20px 10px 10px;
+    margin: 0px 0px 40px 0px;
+}
+.pad-text
+{
+	padding:15px;
+}
+.widget ul li a {
+    color: #8794BA !important;
+}
+a {
+   
+    text-decoration: none;
+}
+
+.arc-main {
+    display: flex;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0px 7px 47px -34px #192A59;
+    border-radius: 5px;
+}
+.arc-text {
+    padding: 15px 10px 0px 20px;
+}
+.arc-text h2 a
+{
+    color: #172755;
+}
+    
+.arc-text p, .arc-text p a
+{
+    color: #8794BA !important;
+}
+.arc-text p a, .automated p a, .pad-text p a {
+    color: #00175a !important;
+}
+
+ul#ah-breadcrumb {
+    padding: 0;
+}
+ul#ah-breadcrumb li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 5px;
+}
+.bread h1 {
+    text-align: left !important;
+    font-weight: 400 !important;
+}
+.error404 .wrap {
+    text-align: center;
+}
+/*pagination css*/
+.pagination {
+    margin: 10px auto;
+    text-align: center;
+    display: block !important;
+}
+.pagination a, .pagination span {
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #172755;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 0px 10px;
+    line-height: 32px;
+}
+.pagination a:hover,
+.pagination span.current {
+background-color: #ef2a82;
+color: #fff;
+}
+.pagination span.current {
+cursor: default;
+}
+@media (max-width: 768px)
+{
+    .arc-img img
+    {
+        width: 100%;
+        max-width: 100%;
+    }
+    .arc-main {
+    display: block;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0px 7px 47px -34px #192A59;
+    border-radius: 5px;
+}
+.arc-text {
+    padding: 15px 10px 10px 20px;
+}
+}

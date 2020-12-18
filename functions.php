@@ -11,16 +11,45 @@ add_theme_support( 'custom-header' );
 add_theme_support( 'custom-logo' );
 add_theme_support( 'customize-selective-refresh-widgets' );
 add_theme_support( 'starter-content' );
+add_image_size( 'small-size', 360, 360, true);
+
+function theme_setup() {
+    // Hard crop: The image will be exactly the specified size
+    add_image_size('Blog Thumbnail 1', 300, 200, true);
+
+    // Soft crop: Preserves the aspect ratio, the image may end up taller than 200px
+    add_image_size('Blog Thumbnail 2', 300, 200);
+}
+
+add_action('after_setup_theme', 'theme_setup');;
+
 
 
 
 
 function analytic_custom_styles()
 {
-	
+	wp_enqueue_style( 'parent_style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style('style.css', get_template_directory_uri(). '/css/style.css');
 	wp_enqueue_style('preset3',get_template_directory_uri(). '/css/bootstrap.min.css');
+	wp_enqueue_style('gfont','https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+	wp_enqueue_style('font','https://use.fontawesome.com/releases/v5.7.1/css/all.css');
+	wp_enqueue_style('carousel', get_template_directory_uri(). '/owl-carousel/assets/owl.carousel.min.css');
+
+
+
+
+
 	// wp_enqueue_style('bootstrap.min',get_template_directory_uri(). '/css/all.min.css');
+
+
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('oxfam_js_cookie', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', array(), null, true);
+	wp_enqueue_script('oxfam_js_cookie', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array(), null, true);
+	wp_enqueue_script('oxfam_js_cookie', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), null, true);
+	wp_enqueue_script('bootstrap', get_template_directory_uri(). '/js/bootstrap.min.js', array(), null, true);
+	wp_enqueue_script('carousel', get_template_directory_uri(). '/owl-carousel/owl.carousel.min.js', array(), null, true);
+	wp_enqueue_script('crousel', get_template_directory_uri(). '/js/crousel.js', array(), null, true);
 
 
 }
@@ -63,7 +92,54 @@ function basic_widget_init(){
 	'after_title' => '</h2>'
 
 ]);
+
+	register_sidebar([
+	'name' =>esc_html__( 'Sidebar Blog', 'basic theme' ),
+	'id'   =>'sidebar-blog',
+	'description' => esc_html__( 'Add Widget for footer Icon here', 'analytic theme' ),
+	'before_widget' => '<section class="widget">',
+	'after_weidget' => '</section>',
+	'before_title' => '<h2 class="widget-title">',
+	'after_title' => '</h2>'
+
+]);
 }
 add_action( 'widgets_init', 'basic_widget_init' );
+
+//Read More Button
+function new_excerpt_more($more) {
+   global $post;
+   return '… <a href="'. get_permalink($post->ID) . '">' . 'Read More &raquo;' . '</a>';
+   }
+   add_filter('excerpt_more', 'new_excerpt_more');
+
+   //Shorth Length
+
+   function my_excerpt_length($length){
+return 30;
+}
+add_filter('excerpt_length', 'my_excerpt_length');
+
+// include file separately
+//include costume
+
+require get_template_directory().'/inc/custom-post.php';
+
+// include carousel
+require get_template_directory().'/inc/project.php';
+
+// include metabox
+require get_template_directory().'/inc/metabox.php';
+
+//include breadcrumb 
+
+require get_template_directory().'/inc/breadcrumb.php';
+
+
+
+// prioritetize pagination over displaying custom post type content
+add_action('init', function() {
+  add_rewrite_rule('(.?.+?)/page/?([0-9]{1,})/?$', 'index.php?pagename=$matches[1]&paged=$matches[2]', 'top');
+});
 
  ?>

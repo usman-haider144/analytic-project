@@ -5,6 +5,9 @@
  ?>
 
  <div class="container">
+ 	<?php ah_breadcrumb(); ?>
+ 	 <span class="bread"><h1>Membership Checkout</h1></span>
+ 	 
  	<?php  echo do_shortcode("[pmpro_checkout]"); ?>
  </div>
 

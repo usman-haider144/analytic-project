@@ -5,6 +5,8 @@
  ?>
  <section >
 		<div class="container">
+		<?php ah_breadcrumb(); ?>
+ 	 <span class="bread"><h1>Membership Level</h1></span>
 			<div class="price">
 				<h1><?php the_field('main_heading'); ?></h1>
 				

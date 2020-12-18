@@ -12,10 +12,10 @@
 
 get_header(); ?>
 
-<div class="wrap">
+<div class="wrap container mt-5">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
+				<img src="http://localhost/analytic/wp-content/uploads/2020/12/404-error-not-found-page-lost-1024x788-1-e1608293504768.png">
 			<section class="error-404 not-found">
 				<header class="page-header">
 					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'twentyseventeen' ); ?></h1>

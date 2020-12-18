@@ -12,7 +12,7 @@
 						<h1><?php the_field('heading'); ?></h1>
 						<p><?php the_field('subheading'); ?></p>
 
-						 <!-- <button class="btnn"><a href="<?php the_field('link'); ?>">Try for free</a></button>  -->
+						 
 						<div class="marpd">
 						<a href="<?php the_field('link'); ?>" class="btnnn">Try for free</a>
 						</div>
@@ -39,8 +39,8 @@
 <section class="mt-4">
 	<div class="container">
 			<div class="feature">
-				<h2>Main Features</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum nisi aliquet volutpat pellentesque volutpat est. Sapien in etiam vitae nibh nunc mattis imperdiet sed nullam. Vitae et, tortor pulvinar risus pulvinar sit amet. Id vel in nam malesuada.</p>
+				<h2><?php the_field('feature_heading'); ?></h2>
+				<p><?php the_field('feature_sub_heading'); ?></p>
 			</div>
 
 			<div class="row tabpad">
@@ -70,7 +70,7 @@
 			<?php 
 					$args = array(
 
-						'posts_per_page' => 5
+						'posts_per_page' => 3
 					);
 			?>
 
@@ -85,7 +85,9 @@
 		<div class="row gaptop">
 		    <div class="col-md-6 col-sm-12">
 				<div>	
-					 <img src="<?php the_post_thumbnail_url(); ?>" class="polyg img-fluid" alt="Automated reports"> 
+					 <img src="<?php the_post_thumbnail_url('small-size'); ?>" class="polyg img-fluid" alt="Automated reports"> 
+					 <!-- <?php the_post_thumbnail( 'Blog Thumbnail 1' ) ?> -->
+
 				 </div> 
 			</div>
 
@@ -93,6 +95,7 @@
 						<div class="automated padleft">
 							<h3><a href="<?php the_permalink(); ?> "> <?php echo get_the_title() ; ?></a> </h3>
 							<p><?php the_excerpt(); ?></p>
+							
 														
 						</div>
 					</div>
