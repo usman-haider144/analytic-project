@@ -17,12 +17,13 @@
 
 					<?php 
 					
- 	 				$pagedd = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+ 	 				$paged = ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1;
 					$args = array(
 						// 'post_type' => 	array('service', ''),
 						'orderby' => 'date',
 						'posts_per_page' => 1,
-						'paged2' => $pagedd,
+						// 'paged' => $paged,
+						'page' => $paged,
 						
 					);
 					$the_query = new WP_Query( $args );
@@ -69,7 +70,7 @@
 								echo paginate_links( array(
 								    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 								    'format' => '?paged=%#%',
-								    'current' => max( 1, get_query_var('pagedd') ),
+								    'current' => max( 1, get_query_var('page') ),
 								    'total' => $the_query->max_num_pages,
 								    'prev_text' => '«',
 								    'next_text' => ' »'
@@ -77,7 +78,7 @@
 						    ?>
 						</div> 
 
-
+<!-- new file -->
 				<?php
 			 
 			else :
