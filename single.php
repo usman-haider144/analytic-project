@@ -25,7 +25,9 @@
 				</div>
 			</div>
 		<?php endwhile; ?>
-		
+		<?php
+			comments_popup_link( 'No comments', '1 comment', '% comments', 'btn btn-primary', 'Comments Disabled');
+?> 
 
 	</div>
 </div>

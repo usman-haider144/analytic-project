@@ -21,7 +21,7 @@
 					$args = array(
 						// 'post_type' => 	array('service', ''),
 						'orderby' => 'date',
-						'posts_per_page' => 1,
+						'posts_per_page' => 3,
 						// 'paged' => $paged,
 						'page' => $paged,
 						

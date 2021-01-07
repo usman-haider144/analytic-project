@@ -1,67 +1,48 @@
-<?php
-/**
- * The template for displaying search results pages
- */
+<?php get_header(); ?>
+<div class="container mt-5">
+<?php 
+if ( have_posts() ) :
+	?>
+    <h2>Search results for query: "<?php the_search_query(); ?>"</h2>
+	<?php
+	while ( have_posts() ) : the_post(); ?>
+ 
+        <article class="post">
+			<?php if ( has_post_thumbnail() ) { ?>
+                <div class="small-thumbnail">
+                    <a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'small-thumbnail' ); ?></a>
+                </div>
+			<?php } ?>
+            <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+            <p class="post-meta"><?php the_time( 'F jS, Y' ); ?> | <a
+                        href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author(); ?></a>
+                | <?php
+				$categories = get_the_category();
+				$comma      = ', ';
+				$output     = '';
+				
+				if ( $categories ) {
+					foreach ( $categories as $category ) {
+						$output .= '<a href="' . get_category_link( $category->term_id ) . '">' . $category->cat_name . '</a>' . $comma;
+					}
+					echo trim( $output, $comma );
+				} ?>
+            </p>
+            <p>
+				<?php echo get_the_excerpt() ?>
+                <a href="<?php the_permalink() ?>">Read more &raquo</a>
+            </p>
+        </article>
+	
+	<?php endwhile;
+ 
+else :
+	echo '<p>No search results found!</p>';
+ 
+endif;
+ ?>
 
-get_header(); ?>
+ </div>
 
-<div class="wrap">
-		 	 	<?php ah_breadcrumb(); ?>
- 	 <span class="bread"><h1>Search</h1></span>
-
-	<header class="page-header">
-		<?php if ( have_posts() ) : ?>
-			<h1 class="page-title">
-			<?php
-			/* translators: Search query. */
-			printf( __( 'Search Results for: %s', 'twentyseventeen' ), '<span>' . get_search_query() . '</span>' );
-			?>
-			</h1>
-		<?php else : ?>
-			<h1 class="page-title"><?php _e( 'Nothing Found', 'twentyseventeen' ); ?></h1>
-		<?php endif; ?>
-	</header><!-- .page-header -->
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-		<?php
-		if ( have_posts() ) :
-			// Start the Loop.
-			while ( have_posts() ) :
-				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-
-
-			endwhile; // End the loop.
-
-			// the_posts_pagination(
-			// 	array(
-			// 		'prev_text'          => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'Analytic' ) . '</span>',
-			// 		'next_text'          => '<span class="screen-reader-text">' . __( 'Next page', 'Analytic' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-			// 		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'Analytic' ) . ' </span>',
-			// 	)
-			// );
-
-		else :
-			?>
-
-			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'Analytic' ); ?></p>
-			<?php
-				get_search_form();
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
-
-<?php
-get_footer();
+ 
+<?php get_footer(); ?>
