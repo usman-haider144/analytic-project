@@ -21,7 +21,7 @@
 					$args = array(
 						// 'post_type' => 	array('service', ''),
 						'orderby' => 'date',
-						'posts_per_page' => 3,
+						 'posts_per_page' => 2,
 						// 'paged' => $paged,
 						'page' => $paged,
 						
@@ -32,7 +32,7 @@
 				<?php
 				while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 			 
-			        <article class="post">
+			        <article class="post moreBox">
 			        	<div class="arc-main">
 			        		<div class="arc-img">
 			        			<?php the_post_thumbnail('small-size'); ?>
@@ -94,9 +94,5 @@
 </div>
 
 
- 
+
 <?php get_footer();?>
-
-
-
-

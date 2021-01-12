@@ -185,6 +185,9 @@ color: #fff;
 .pagination span.current {
 cursor: default;
 }
+input#wp-submit:focus {
+    outline: none;
+}
 @media (max-width: 768px)
 {
     .arc-img img

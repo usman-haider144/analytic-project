@@ -35,18 +35,33 @@
    	wp_enqueue_style('font','https://use.fontawesome.com/releases/v5.7.1/css/all.css');
    	wp_enqueue_style('carousel', get_template_directory_uri(). '/owl-carousel/assets/owl.carousel.min.css');
    
+
+      wp_dequeue_script('jquery');
    
    		wp_enqueue_script('jquerymain', 'https://code.jquery.com/jquery-3.5.1.min.js', array(), null, true);
    		wp_enqueue_script('carousel', get_template_directory_uri(). '/owl-carousel/owl.carousel.min.js', array(), null, true);
    		wp_enqueue_script('crousel', get_template_directory_uri(). '/js/crousel.js', array(), null, true);
-   		wp_enqueue_script('isotop', get_template_directory_uri(). '/js/isotope.js', array(), null, true);
+
+   		// wp_enqueue_script('isotop', get_template_directory_uri(). '/js/isotope.js', array(), null, true);
    		wp_enqueue_script('isotopdoc', get_template_directory_uri(). '/js/isotope-docs.min.js', array(), null, true);
+         wp_enqueue_script('my_loadmore', get_template_directory_uri() . '/js/loadmore.js', array('jquery'), '1.0.0', true );
    
    
    }
    
    
    add_action('wp_enqueue_scripts', 'analytic_custom_styles');
+
+
+   
+
+   add_action( 'wp_head', function(){
+      
+
+      echo '<script type="text/javascript">
+            var ajaxURL = "' . admin_url('admin-ajax.php') . '";
+            </script>';
+   } );
    
    
    // register nav
@@ -130,7 +145,4 @@
    
    //include Comments 
    
-   // require get_template_directory().'/inc/comments.php';
-   
-   
-    ?>
+    require get_template_directory().'/inc/load.php';

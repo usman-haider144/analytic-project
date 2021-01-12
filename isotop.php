@@ -1,5 +1,5 @@
 <?php get_header();
-   //Template Name: isotop
+   //Template Name: Isotop
    
    ?>
 <div class="big-demo" data-js="hero-demo">
