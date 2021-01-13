@@ -1974,8 +1974,10 @@ a.colr {
 
 /*load more*/
 .misha_loadmore{
+  width: 37%;
   background-color: #ddd;
-  border-radius: 2px;
+  margin: 0px auto;
+  border-radius: 5px;
   display: block;
   text-align: center;
   font-size: 14px;

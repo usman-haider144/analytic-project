@@ -20,7 +20,7 @@
        add_image_size('Blog Thumbnail 2', 300, 200);
    }
    
-   add_action('after_setup_theme', 'theme_setup');;
+   add_action('after_setup_theme', 'theme_setup');
    
    
    

@@ -7,7 +7,7 @@
 ?>
 <div class="container mt-5">
             <?php ah_breadcrumb(); ?>
-            <span class="bread"><h1>Blog</h1></span>
+            <span class="bread"><h1>Toggle</h1></span>
             
             <div class="row">
                 <div class="col-md-8 bg-bord">
@@ -33,9 +33,9 @@
                                         <h3><a href="<?php the_permalink(); ?> "> <?php echo get_the_title() ; ?></a> </h3>
                                         <p><?php the_excerpt(); ?></p>
                                         <p class="byline">
-                                          Author:
+                                          Author :
                                           <a href="<?php echo get_author_posts_url( $post->post_author ); ?>"><?php the_author(); ?></a> |
-                                          Categories: <?php the_category( ',' ); ?>
+                                          Categories : <?php the_category( ',' ); ?>
                                         </p>
                                      </div>
                                 </div>
