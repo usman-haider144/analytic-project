@@ -2,6 +2,11 @@ h1,h2,h3,h4,h5,h6,p,a,li
 {
   font-family: Roboto;
 }
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
 .backcolor
 {
  background-color: #F8F9FF !important;
@@ -382,6 +387,7 @@ padding-top: 15px;
 }
 .cardbotom
 {
+  position: relative;
   background: #0F1F4B;
   box-shadow: 0px 18px 50px -15px #192A59;
   border-radius: 30px;
@@ -495,6 +501,13 @@ margin-top: 36px;
     background: #D3D9E9;
     transition: background-color 1s ease;
     }
+    hr.seprat {
+    margin: 0px auto;
+}
+.menu-footer-menu-container
+{
+  position: relative;
+}
 
 .fotr li a
 {
@@ -537,6 +550,24 @@ float: right;
 .padbtm
 {
   padding-bottom: 93px;
+}
+div#accordionExample {
+    border: 1px solid #0332;
+    padding: 25px;
+    margin: 0px auto;
+}
+button.accordion-button {
+    border: none;
+    color: #0c63e4;
+    background-color: #e7f1ff;
+    font-size: 26px;
+}
+button.accordion-button:focus {
+    outline: none;
+}
+div#accordionExample {
+    width: 700px;
+    max-width: 100%;
 }
 
 .bgbottom {

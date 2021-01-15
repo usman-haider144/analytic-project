@@ -2,7 +2,9 @@ jQuery(function($) {
 
 
     $(".misha_loadmore").click(function() {
-        $.post('http://localhost/analytic/wp-admin/admin-ajax.php', {
+        $.post(
+        	ajaxURL, 
+        	{
                 'action': 'your_load_more',
                 'count': $(".bg-bord > div > .bg-post").length
             },
@@ -16,8 +18,9 @@ jQuery(function($) {
                         $(".misha_loadmore").before(posts[i]);
                 }
 
-            });
+            }
+        );
     });
 
-
 });
+

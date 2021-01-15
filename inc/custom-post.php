@@ -10,7 +10,7 @@ function create_service_cpt() {
 		'labels' => $labels,
 		'menu_icon' => 'dashicons-buddicons-topics',
 		'supports' => array('title', 'editor', 'thumbnail', 'author', 'comments', 'post-formats'),
-		'taxonomies' => array('category', 'post_tag'),
+		// 'taxonomies' => array('category', 'post_tag'),
 		'public' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
