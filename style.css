@@ -5,6 +5,14 @@ Version: 1.00
 Author: M Usman
 Author URl: http://facebook.com/usm144
 */
+
+
+.backgroundImage {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .owl-carousel {
     display: block !important;
     width: 100%;

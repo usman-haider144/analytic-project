@@ -191,8 +191,7 @@ color: #8794BA;
 .btnnn
 {
 padding: 15px 80px 15px 80px;
-
-
+transition: 1s;
 border-radius: 68px;
 background: #EF2A82;
 color: #FFFFFF;

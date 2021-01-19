@@ -27,6 +27,7 @@ wp_enqueue_style('gfont','https://fonts.googleapis.com/css2?family=Roboto:wght@3
 wp_enqueue_style('font','https://use.fontawesome.com/releases/v5.7.1/css/all.css');
 wp_enqueue_style('carousel', get_template_directory_uri(). '/owl-carousel/assets/owl.carousel.min.css');
 wp_enqueue_style('style.css', get_template_directory_uri(). '/css/style.css');
+
 wp_dequeue_script('jquery');
 // jQuery
 wp_enqueue_script('jquerymain', 'https://code.jquery.com/jquery-3.5.1.min.js', array(), null, true);
@@ -106,7 +107,7 @@ add_filter('excerpt_length', 'my_excerpt_length');
 //include costume
 require get_template_directory().'/inc/custom-post.php';
 // include carousel
-require get_template_directory().'/inc/project.php';
+
 // include metabox
 require get_template_directory().'/inc/metabox.php';
 //include breadcrumb 

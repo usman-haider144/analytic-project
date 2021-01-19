@@ -14,39 +14,43 @@
       </li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="<?php the_field('first_images'); ?>" alt="First slide">
+         
+      <?php
+      $args = array(
+      'post_type' => array('slider'),
+      'orderby' => 'ASC',
+      'posts_per_page' => 6
+      );
+      $the_query = new WP_Query($args); 
+       $the_query = new WP_Query($args); 
+       if ($the_query->have_posts()):
+      while ($the_query->have_posts()):
+      $the_query->the_post(); 
+
+    $c++;
+
+        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' );
+        $url = $thumb['0'];
+
+        $class = ($c == 1) ? 'active' : '';
+      ?>
+
+
+     <div class="carousel-item backgroundImage <?php echo $class; ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);height: 70vh;">
+        <!-- <img class="d-block w-100"  src="<?php the_post_thumbnail(); ?>" > -->
         <div class="carousel-caption d-none d-md-block">
-          <h5>
-            <?php the_field('images_text_'); ?>
-          </h5>
-          <p>
-            <?php the_field('images_peragraph'); ?>
-          </p>
+            <h5>Slider Heading</h5>
+            <p>Slider peragraph</p>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="<?php the_field('second-images'); ?>" alt="Second slide">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>
-            <?php the_field('images_text_'); ?>
-          </h5>
-          <p>
-            <?php the_field('images_peragraph'); ?>
-          </p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="<?php the_field('images_third'); ?>" alt="Third slide">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>
-            <?php the_field('images_text_'); ?>
-          </h5>
-          <p>
-            <?php the_field('images_peragraph'); ?>
-          </p>
-        </div>
-      </div>
+       </div>    
+         <?php
+endwhile;
+wp_reset_postdata();
+endif;
+
+?>    
+   
+      
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true">
@@ -73,9 +77,7 @@
     <div class="owl-carousel">
       <?php
 $args = array(
-'post_type' => array(
-'project'
-) ,
+'post_type' => array('project'),
 'orderby' => 'ASC',
 'posts_per_page' => 6
 );
