@@ -5,7 +5,7 @@
 	<div class="row pt-5">
 
 		<div class="col-md-12 col-sm-12 d-flex justify-content-center">
-			<img src="<?php the_post_thumbnail_url(); ?>" class="polyg img-fluid" alt="Automated reports"> 
+			<img src="<?php the_post_thumbnail_url('medium'); ?>" class="polyg img-fluid" alt="Automated reports"> 
 		</div>
 
 
@@ -26,8 +26,16 @@
 			</div>
 		<?php endwhile; ?>
 		<?php
-			comments_popup_link( 'No comments', '1 comment', '% comments', 'btn btn-primary', 'Comments Disabled');
+			// comments_popup_link( 'No comments', '1 comment', '% comments', 'btn btn-primary', 'Comments Enabled');
+			if ( comments_open() || get_comments_number() ) :
+					comments_template();
+			endif;
+
 ?> 
+
+
+ 
+ 
 
 	</div>
 </div>

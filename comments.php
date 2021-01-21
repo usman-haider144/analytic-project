@@ -85,5 +85,21 @@ if ( post_password_required() ) {
 
 	comment_form();
 	?>
+	<div>
+    <div class="comment-rating">
+        <ul class="star-rating">
+            <li><a href="#" title="<?php _e('Zero - 0 stars'); ?>" class="zero-star" onclick="rateClick(0); return false;">0</a></li>
+            <li><a href="#" title="<?php _e('Really bad - 1 star'); ?>" class="one-star" onclick="rateClick(1); return false;">1</a></li>
+            <li><a href="#" title="<?php _e('Bad - 2 stars'); ?>" class="two-stars" onclick="rateClick(2); return false;">2</a></li>
+            <li><a href="#" title="<?php _e('Good - 3 stars'); ?>" class="three-stars" onclick="rateClick(3); return false;">3</a></li>
+            <li><a href="#" title="<?php _e('Very good - 4 stars'); ?>" class="four-stars" onclick="rateClick(4); return false;">4</a></li>
+            <li><a href="#" title="<?php _e('Excellent - 5 stars'); ?>" class="five-stars" onclick="rateClick(5); return false;">5</a></li>
+        </ul>
+    </div>
+    <?php _e('Your rate'); ?>
+    <input type="hidden" name="rate" id="rate" value="<?php echo esc_attr($comment_author_rate); ?>" />
+</div>
 
 </div><!-- #comments -->
+
+

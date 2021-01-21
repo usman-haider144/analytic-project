@@ -72,7 +72,7 @@ function create_slider_cpt() {
 		'description' => __( 'Custom post type ', 'basic' ),
 		'labels' => $labels,
 		'menu_icon' => 'dashicons-buddicons-topics',
-		'supports' => array( 'thumbnail'),
+		'supports' => array( 'title','excerpt','thumbnail'),
 		// 'taxonomies' => array('category', 'post_tag'),
 		'public' => true,
 		'show_ui' => true,
@@ -112,4 +112,58 @@ function create_slider_cpt() {
 	  
 }
 add_action( 'init', 'create_slider_cpt', 0 );
+
+// Testimonial 
+
+function create_testimonial_cpt() {
+	$labels = array(
+	'all_items'           => __( 'All Testimonial'),
+);
+
+	
+	$args = array(
+		'label' => __( 'Testimonial', 'basic' ),
+		'description' => __( 'Custom post type ', 'basic' ),
+		'labels' => $labels,
+		'menu_icon' => 'dashicons-buddicons-topics',
+		'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author'),
+		// 'taxonomies' => array('category', 'post_tag'),
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'menu_position' => 5,
+		'show_in_admin_bar' => true,
+		'show_in_nav_menus' => true,
+		'can_export' => true,
+		'has_archive' => true,
+		'hierarchical' => false,
+		'exclude_from_search' => false,
+		'show_in_rest' => true,
+		'publicly_queryable' => true,
+		'capability_type' => 'post',
+	);
+	register_post_type( 'Testimonial', $args );
+
+	// Now register the taxonomy
+	  register_taxonomy('Testimonial-categories',array('testimonial'),
+	   array(
+	    'hierarchical' => true,
+	    'label'=> __( 'Categories', '' ),
+	    'show_ui' => true,
+	    'show_in_rest' => true,
+	    'show_admin_column' => true,
+	    'query_var' => true,
+	  ));
+	  register_taxonomy('testimonial-tags',array('testimonial'), 
+	  	array(
+	    'hierarchical' => true,
+	    'label'=> __( 'Tags', '' ),
+	    'show_ui' => true,
+	    'show_in_rest' => true,
+	    'show_admin_column' => true,
+	    'query_var' => true,
+	  ));
+	  
+}
+add_action( 'init', 'create_testimonial_cpt', 0 );
  ?>

@@ -27,6 +27,8 @@ wp_enqueue_style('gfont','https://fonts.googleapis.com/css2?family=Roboto:wght@3
 wp_enqueue_style('font','https://use.fontawesome.com/releases/v5.7.1/css/all.css');
 wp_enqueue_style('carousel', get_template_directory_uri(). '/owl-carousel/assets/owl.carousel.min.css');
 wp_enqueue_style('style.css', get_template_directory_uri(). '/css/style.css');
+wp_enqueue_style('contect', get_template_directory_uri(). '/css/contect.css');
+
 
 wp_dequeue_script('jquery');
 // jQuery
@@ -42,6 +44,9 @@ wp_enqueue_script('crousel', get_template_directory_uri(). '/js/crousel.js', arr
 // Isotop
 wp_enqueue_script('isotopdoc', get_template_directory_uri(). '/js/isotope-docs.min.js', array(), null, true);
 wp_enqueue_script('my_loadmore', get_template_directory_uri() . '/js/loadmore.js', array('jquery'), '1.0.0', true );
+
+wp_enqueue_script('my_loadmore', get_template_directory_uri() . '/js/comnt.js', array('jquery'), '1.0.0', true );
+
 }
 add_action('wp_enqueue_scripts', 'analytic_custom_styles');
 // Load Ajax URL

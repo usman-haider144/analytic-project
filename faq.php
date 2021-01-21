@@ -36,11 +36,11 @@
       ?>
 
 
-     <div class="carousel-item backgroundImage <?php echo $class; ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);height: 70vh;">
+     <div class="carousel-item backgroundImage <?php echo $class; ?>" style="background-image: linear-gradient(0deg, rgba(7, 7, 7, 0.3), rgba(155, 155, 150, 0.3)),url(<?php echo get_the_post_thumbnail_url(); ?>);height: 70vh;">
         <!-- <img class="d-block w-100"  src="<?php the_post_thumbnail(); ?>" > -->
-        <div class="carousel-caption d-none d-md-block">
-            <h5>Slider Heading</h5>
-            <p>Slider peragraph</p>
+        <div class="carousel-caption d-none d-md-block widthtext">
+            <h1><?php the_title(); ?></h1>
+            <p><?php the_excerpt(); ?></p>
         </div>
        </div>    
          <?php
