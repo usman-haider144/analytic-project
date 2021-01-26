@@ -27,25 +27,40 @@ wp_enqueue_style('gfont','https://fonts.googleapis.com/css2?family=Roboto:wght@3
 wp_enqueue_style('font','https://use.fontawesome.com/releases/v5.7.1/css/all.css');
 wp_enqueue_style('carousel', get_template_directory_uri(). '/owl-carousel/assets/owl.carousel.min.css');
 wp_enqueue_style('style.css', get_template_directory_uri(). '/css/style.css');
+
 wp_enqueue_style('contect', get_template_directory_uri(). '/css/contect.css');
+wp_enqueue_style('tab', get_template_directory_uri(). '/css/tab.css');
+wp_enqueue_style('isotop', get_template_directory_uri(). '/css/isotop.css');
+
+
+
 
 
 wp_dequeue_script('jquery');
 // jQuery
+// wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', array(), null, true);
 wp_enqueue_script('jquerymain', 'https://code.jquery.com/jquery-3.5.1.min.js', array(), null, true);
+
+
+
 // Slider
 wp_enqueue_script('popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', array(), null, true);
-wp_enqueue_script('Bootstrapmain', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', array(), null, true);
+// wp_enqueue_script('Bootstrapmain', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', array(), null, true);
 wp_enqueue_script('Bootstrapjs', get_template_directory_uri(). '/js/bootstrap.min.js', array(), null, true);
 // carousel
-wp_enqueue_script('carousel', get_template_directory_uri(). '/owl-carousel/owl.carousel.min.js', array(), null, true);
-wp_enqueue_script('crousel', get_template_directory_uri(). '/js/crousel.js', array(), null, true);
-// wp_enqueue_script('isotop', get_template_directory_uri(). '/js/isotope.js', array(), null, true);
+wp_enqueue_script('carousel', get_template_directory_uri(). '/owl-carousel/owl.carousel.min.js', array('jquery'), null, true);
+wp_enqueue_script('crousel', get_template_directory_uri(). '/js/crousel.js', array('jquery'), null, true);
+wp_enqueue_script('isotop', get_template_directory_uri(). '/js/isotope.min.js', array('jquery'), null, true);
 // Isotop
-wp_enqueue_script('isotopdoc', get_template_directory_uri(). '/js/isotope-docs.min.js', array(), null, true);
+// wp_enqueue_script('isotopdoc', get_template_directory_uri(). '/js/isotope-docs.min.js', array(), null, true);
 wp_enqueue_script('my_loadmore', get_template_directory_uri() . '/js/loadmore.js', array('jquery'), '1.0.0', true );
 
-wp_enqueue_script('my_loadmore', get_template_directory_uri() . '/js/comnt.js', array('jquery'), '1.0.0', true );
+wp_enqueue_script('coment', get_template_directory_uri() . '/js/comnt.js', array('jquery'), '1.0.0', true );
+
+// if( is_page_template('isotopgalery.php') ):
+	wp_enqueue_script('IsotopGalery', get_template_directory_uri() . '/js/isotopgal.js', array('jquery'), '1.0.0', true );
+// endif;
+
 
 }
 add_action('wp_enqueue_scripts', 'analytic_custom_styles');

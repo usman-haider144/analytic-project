@@ -2023,3 +2023,36 @@ a.colr {
   background-color: #767676;
   color: #fff;
 }
+.page-template-faq
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: -28px !important;
+    left: 0;
+    z-index: 15;
+    display: -ms-flexbox;
+    display: flex !important;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-left: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
+}
+.page-template-faq .carousel-indicators li {
+    cursor: pointer;
+    border-radius: 50% !important;
+    width: 20px !important;
+    height: 20px !important;
+    opacity: 0.5;
+    margin: 5px !important;
+}
+.page-template-faq .carousel-indicators .active {
+    cursor: pointer;
+    border-radius: 50% !important;
+    width: 20px !important;
+    height: 20px !important;
+    opacity: 1;
+    margin: 5px !important;
+    border: 2px solid #fff;
+}

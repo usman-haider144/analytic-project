@@ -139,7 +139,7 @@
 
 .carousel-indicators {
     position: absolute;
-    bottom: -100px;
+    bottom: -100px !important;
     display: -webkit-box !important
 }
 
@@ -352,7 +352,7 @@
     border: 2px solid #fff
 }
 
-.carousel-indicators li#li1 {
+/*.carousel-indicators li#li1 {
     background: url("http://localhost/analytic/wp-content/uploads/2021/01/IjkibdE.jpg") !important;
     background-size: cover !important
 }
@@ -375,7 +375,7 @@
 .carousel-indicators li#li5 {
     background: url("http://localhost/analytic/wp-content/uploads/2021/01/gazoShk-scaled.jpg") !important;
     background-size: cover !important
-}
+}*/
 
 .profile-pic {
     width: 100px;
@@ -406,3 +406,4 @@
         border-top-right-radius: 0px
     }
 }
+

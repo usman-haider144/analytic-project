@@ -43,14 +43,6 @@ while ($the_query->have_posts() ) : $the_query->the_post();
 wp_reset_postdata();
 endif;
 ?>
-                <!-- <li data-target="#carouselExampleIndicators" data-slide-to="1" id="li2">
-                </li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2" id="li3" >
-                </li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3" id="li4">
-                </li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="4" id="li5">
-                </li> -->
               </ol>
               <div class="carousel-inner">
                 <?php 

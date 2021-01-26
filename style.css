@@ -422,8 +422,16 @@ input#wp-submit:focus {
     background: hsl(324, 100%, 50%);
 }
 
+/*Isotop End*/
+/*isotop design*/
+img.imgwidth {
+    width: 200px;
+    height: 200px;
+    }
+    
+/*end isotop design*/
 
-/*testimonial*/
+/*testimonial start*/
 
 
 
