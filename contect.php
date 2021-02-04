@@ -30,10 +30,6 @@ $args = array(
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) :
 while ($the_query->have_posts() ) : $the_query->the_post();
-
-
-
-        // print_r($term_obj_list);
       
 ?>
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" id=""  style="background:url( <?php the_post_thumbnail_url('medium-large'); ?>); background-size: cover !important;">
@@ -72,19 +68,29 @@ while ($the_query->have_posts() ) : $the_query->the_post();
                     <img src="<?php the_post_thumbnail_url('medium-large'); ?>" class="img-fluid profile-pic"> 
                   </div>
                   <h6 class="font-weight-bold mt-5"> 
-                    <?php echo get_the_title(); ?>
+                    <?php the_title(); ?>
                   </h6> 
                   <small class="mb-2">
                     
 <?php 
 
-$term_list = get_the_terms($post->ID, 'testimonial-tags');
-$types ='';
-foreach($term_list as $term_single) {
-     $types .= ucfirst($term_single->slug).', ';
-}
-$typesz = rtrim($types, ', ');
-echo $typesz;
+the_terms( $post->ID, 'testimonial-tags', '<span class="terms">', ', ', '</span>' );
+
+// $term_list = get_the_terms($post->ID, 'testimonial-tags');
+// $types ='';
+// foreach($term_list as $term_single) {
+//      $types .= ucfirst($term_single->slug).', ';
+// }
+// $typesz = rtrim($types, ', ');
+// echo $typesz;
+
+// $terms = get_the_terms($post->ID, 'testimonial-tags');
+// $types = [];
+// foreach($terms as $t) {
+//      $types[] = $t->name;
+// }
+// print_r($types)
+// echo $types[0];
      ?>
                       
                   </small>
